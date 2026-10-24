@@ -15,4 +15,6 @@ export type Product = {
   active: boolean;
   stock: Record<string, number>;
   images: string[];
+  video: string | null;
+
 };
