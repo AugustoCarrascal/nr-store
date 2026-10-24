@@ -7,7 +7,10 @@ export type Product = {
   name: string;
   description: string;
   price: number;
-  category: string;
+  category: string; // Clubes | Selecciones | Ropa deportiva
+  region: string | null;
+  country: string | null;
+  team: string | null;
   featured: boolean;
   active: boolean;
   stock: Record<string, number>;

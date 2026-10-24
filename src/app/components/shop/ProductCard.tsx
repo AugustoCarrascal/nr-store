@@ -26,7 +26,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="space-y-1 p-4">
-        <p className="text-xs uppercase tracking-wider text-zinc-500">{product.category}</p>
+        <p className="text-xs uppercase tracking-wider text-zinc-500">{product.team ?? product.category}</p>
         <h3 className="font-semibold leading-tight">{product.name}</h3>
         <p className="text-lg font-bold text-lime-400">{formatPrice(product.price)}</p>
       </div>
