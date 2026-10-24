@@ -3,9 +3,10 @@ import { getProducts } from "@/lib/data/products";
 
 export const metadata = { title: "Camisetas | NR STORE" };
 
-export default function ProductosPage() {
-  const products = getProducts();
+export const instant = false;
 
+export default async function ProductosPage() {
+  const products = await getProducts();
   return (
     <section className="py-10">
       <h1 className="mb-8 text-3xl font-black tracking-tight">Catálogo</h1>

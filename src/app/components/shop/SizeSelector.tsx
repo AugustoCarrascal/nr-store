@@ -1,3 +1,4 @@
+import { SIZES } from "@/types";
 type Props = {
   stock: Record<string, number>;
   selected: string | null;
@@ -7,7 +8,8 @@ type Props = {
 export default function SizeSelector({ stock, selected, onSelect }: Props) {
   return (
     <div className="flex flex-wrap gap-3">
-      {Object.entries(stock).map(([size, qty]) => {
+      {SIZES.filter((s) => s in stock).map((size) => {
+        const qty = stock[size];
         const soldOut = qty === 0;
         const isSelected = selected === size;
 

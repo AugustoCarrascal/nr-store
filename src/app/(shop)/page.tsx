@@ -2,8 +2,10 @@ import Link from "next/link";
 import ProductCard from "@/components/shop/ProductCard";
 import { getFeaturedProducts } from "@/lib/data/products";
 
-export default function HomePage() {
-  const featured = getFeaturedProducts();
+export const instant = false;
+
+export default async function HomePage() {
+  const featured = await getFeaturedProducts();
 
   return (
     <>

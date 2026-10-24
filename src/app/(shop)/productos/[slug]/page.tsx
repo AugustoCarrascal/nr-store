@@ -1,26 +1,22 @@
 import { notFound } from "next/navigation";
 import { Shirt } from "lucide-react";
 import AddToCart from "@/components/shop/AddToCart";
-import { getProductBySlug, getProducts } from "@/lib/data/products";
+import { getProductBySlug } from "@/lib/data/products";
 import { formatPrice } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export const instant = false;
 
-export function generateStaticParams() {
-  return getProducts().map(({ slug }) => ({ slug }));
-}
-
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
   return { title: product ? `${product.name} | NR STORE` : "Producto no encontrado" };
 }
 
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) notFound();
 

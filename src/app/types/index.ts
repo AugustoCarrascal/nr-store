@@ -1,10 +1,15 @@
+export const SIZES = ["S", "M", "L", "XL", "XXL"] as const;
+export type Size = (typeof SIZES)[number];
+
 export type Product = {
   id: string;
-  slug: string; // para la URL: /productos/boca-titular-2026
+  slug: string;
   name: string;
   description: string;
-  price: number; // en pesos
+  price: number;
   category: string;
   featured: boolean;
-  stock: Record<string, number>; // { S: 3, M: 5, L: 0 }
+  active: boolean;
+  stock: Record<string, number>;
+  images: string[];
 };
