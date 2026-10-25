@@ -8,7 +8,7 @@ import { buildHref, cleanParams, filterProducts, sortProducts, type CatalogParam
 
 export const metadata = { title: "Camisetas | NR STORE" };
 
-export const instant = false;
+
 
 export default async function ProductosPage({
   searchParams,

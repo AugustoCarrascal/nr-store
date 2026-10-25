@@ -6,7 +6,6 @@ import { formatPrice } from "@/lib/utils";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export const instant = false;
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;

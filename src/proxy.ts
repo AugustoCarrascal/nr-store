@@ -23,7 +23,6 @@ export async function proxy(request: NextRequest) {
     }
   );
 
-  // getUser() valida el token contra Supabase (getSession() no es seguro para esto)
   const {
     data: { user },
   } = await supabase.auth.getUser();
